@@ -7,10 +7,12 @@ const UNITS = process.env.UNITS || 'metric';
 
 /* GET home page. */
 router.get('/', function(req, res) {
+  process.stderr.write('Route / requested')
   res.render('index', { weather: null, err: null });
 });
 
 router.post('/get_weather', async function (req,res) {
+  process.stderr.write('Error')('Route /get_weather requested')
   let city = req.body.city;
   let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${UNITS}&appid=${OWM_API_KEY}`;
 
