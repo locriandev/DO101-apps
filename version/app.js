@@ -5,7 +5,7 @@ var response;
 
 app.get('/', function (req, res) {
 
-    response = 'Testing webhooks!' + '\n';
+    response = 'All good!' + '\n';
 
     //send the response to the client
     res.send(response);
